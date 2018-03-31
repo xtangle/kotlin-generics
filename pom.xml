@@ -10,7 +10,7 @@
   <packaging>jar</packaging>
 
   <name>kotlin-generics</name>
-  <description>Examples and assignment on Generics for the Kotlin study group</description>
+  <description>Kotlin Study Group - Generics examples and assignments</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

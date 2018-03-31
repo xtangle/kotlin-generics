@@ -1,4 +1,8 @@
-package com.rbc.rbcone.studygroup.kotlin.assignment.problems
+package com.rbc.rbcone.studygroup.kotlin.assignment.solutions
+
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import java.math.BigDecimal
+import java.time.LocalDate
 
 fun main(args: Array<String>) {
 
@@ -13,7 +17,6 @@ fun main(args: Array<String>) {
      *    (Hint: use the jacksonObjectMapper function provided by the jackson-module-kotlin library)
      */
 
-    /*
     val obj1: Response<String> = json1.toKotlinObject()
     val obj2: Response<Int> = json2.toKotlinObject()
     val obj3: Response<LocalDate> = json3.toKotlinObject()
@@ -23,7 +26,9 @@ fun main(args: Array<String>) {
     println(obj2) // Response(id=2, content=10)
     println(obj3) // Response(id=3, content=2018-03-14)
     println(obj4) // Response(id=4, content=-371.48000)
-    */
 }
 
 data class Response<out T>(val id: Int, val content: T)
+
+inline fun <reified T> String.toKotlinObject(): T =
+    jacksonObjectMapper().readValue(this, T::class.java)
