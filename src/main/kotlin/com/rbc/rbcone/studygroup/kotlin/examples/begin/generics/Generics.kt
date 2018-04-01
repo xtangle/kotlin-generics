@@ -9,4 +9,11 @@ fun main(args: Array<String>) {
     val list4 = MyList(1, 2.3, -5.1f)
 }
 
-class MyList (private vararg val contents: Any?)
+class MyList (private vararg val contents: Any?): Iterable<Any?> {
+
+    override fun iterator(): Iterator<Any?> = object: Iterator<Any?> {
+        private var index = 0
+        override fun hasNext(): Boolean = index < contents.size
+        override fun next(): Any? = contents[index++]
+    }
+}
