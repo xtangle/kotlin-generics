@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
      * Write a function named 'mergeWith' such that the following uncommented code compiles and the tests pass.
      *
      * (Hint: You may find the 'merge' function for Sequences from Problem 4 to be useful here. Also, you may want
-     * to implement a specialized comparable version of Pair)
+     * to implement a specialized comparable version of the Pair class)
      */
 
     val daysAndNumbers = daysOfWeek.mergeWith(numbers) { DayOfWeek.of(it.toInt()) }
