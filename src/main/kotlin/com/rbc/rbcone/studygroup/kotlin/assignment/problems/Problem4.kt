@@ -4,7 +4,7 @@ fun main(args: Array<String>) {
 
     /**
      * Write an extension function named 'merge' for a Sequence with comparable elements.
-     * When another sequence of the same type is pass as an argument, it returns a new sequence which produces
+     * When another sequence of the same type is passed as an argument, it returns a new sequence which produces
      * whichever current element that is smaller between the two sequences. If the two sequences produces elements
      * that are equal, the one from the first sequence is taken. For example, given two sequences s1 and s2:
      *
