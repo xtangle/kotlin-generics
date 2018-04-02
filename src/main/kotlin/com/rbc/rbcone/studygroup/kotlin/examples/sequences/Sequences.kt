@@ -1,4 +1,4 @@
-package com.rbc.rbcone.studygroup.kotlin.examples.end.sequences
+package com.rbc.rbcone.studygroup.kotlin.examples.sequences
 
 fun main(args: Array<String>) {
 
