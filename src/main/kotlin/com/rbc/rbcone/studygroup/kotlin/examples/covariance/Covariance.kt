@@ -9,25 +9,32 @@ fun main(args: Array<String>) {
     val list3: MyList<BigDecimal> = MyList(BigDecimal("1.5"), BigDecimal("-4.7"))
     val list4: MyList<Number> = MyList(1, 2.3, -5.1f)
 
-    // println(sum(list1))
-    // println(sum(list2))
-    // println(sum(list3))
-    println(sum(list4))
+    /*
+    println(list1.largest())
+    println(list2.largest())
+    println(list3.largest())
+    */
+    println(list4.largest())
 }
 
 class MyList<T>(vararg initialContents: T): Iterable<T> {
     private val contents = mutableListOf(*initialContents)
 
+    override fun iterator(): Iterator<T> = contents.iterator()
+
+    /*
+    fun add(element: T) {
+        this.contents.add(element)
+    }
+    */
+
     fun printContents() {
         println("The contents in this list are: ${contents.joinToString()}")
     }
-
-    override fun iterator(): Iterator<T> = contents.iterator()
 }
 
-fun sum(myList: MyList<Number>): Double =
-    myList.iterator().asSequence().sumByDouble { it.toDouble() }
 
+fun MyList<Number>.largest(): Number? = iterator().asSequence().maxBy { it.toDouble() }
 
 
 /**
