@@ -13,6 +13,8 @@ fun main(args: Array<String>) {
 
     // copyList<Int>(source, dest2)
     // dest2.printContents()
+
+    println(isEqual(source, dest1))
 }
 
 class MyList<T>(vararg initialContents: T): MutableIterable<T> {
@@ -33,7 +35,12 @@ class MyList<T>(vararg initialContents: T): MutableIterable<T> {
  * - ? super MyList    <==>  in T
  */
 fun <T> copyList(source: MyList<T>, destination: MyList<T>) {
+    val destIterator = destination.iterator()
+    while (destIterator.hasNext()) destIterator.next()
     for (element in source) {
-        destination.iterator().add(element)
+        destIterator.add(element)
     }
 }
+
+fun isEqual(list1: MyList<*>, list2: MyList<*>): Boolean =
+    list1.iterator().asSequence().toList() == list2.iterator().asSequence().toList()
