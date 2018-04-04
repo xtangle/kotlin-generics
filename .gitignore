@@ -20,6 +20,20 @@ gen/
 build/
 out/
 target/
+
+# generated files from TeX
+*.aux
+*.pdf
+*.ps
+*.log
+*.dvi
+*.tex~
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
   
 # Local configuration file (sdk path, etc)
 local.properties
