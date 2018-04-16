@@ -28,11 +28,9 @@ class MyList<T>(vararg initialContents: T) {
         println("The contents in this list are: ${contents.joinToString { formatter.format(it) }}")
     }
 
-    /*
     fun printContents(transformer: (T) -> String) {
         println("The contents in this list are: ${contents.joinToString(transform = transformer)}")
     }
-    */
 }
 
 interface Formatter<T> {
@@ -46,4 +44,3 @@ val stringFormatter = object: Formatter<String> {
 val numberFormatter = object: Formatter<Number> {
     override fun format(element: Number) = BigDecimal(element.toString()).setScale(4).toPlainString()
 }
-

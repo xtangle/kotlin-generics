@@ -33,4 +33,8 @@ fun main(args: Array<String>) {
         .find { println("finding $it"); it.endsWith('E') }
         .also { println(it); println() }
 
+    val namesStartingWithJ = names.asSequence()
+        .filter { it.startsWith('J') }
+        .constrainOnce()
+        .toList()
 }

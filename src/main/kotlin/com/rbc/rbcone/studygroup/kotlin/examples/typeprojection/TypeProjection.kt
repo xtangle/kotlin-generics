@@ -11,7 +11,10 @@ fun main(args: Array<String>) {
     copyList(source, dest1)
     dest1.printContents()
 
-    // copyList<Int>(source, dest2)
+    // copyList(source, dest2)
+    // dest2.printContents()
+
+    // copyListJavaWay(source, dest2)
     // dest2.printContents()
 
     println(isEqual(source, dest1))
@@ -27,14 +30,15 @@ class MyList<T>(vararg initialContents: T): MutableIterable<T> {
     }
 }
 
-/**
- * Note, we only read the source and only write the destination
- * Use 'type projection', also called 'use site variance'
- * In Java, it is similar to the '?' wildcard:
- * - ? extends MyList  <==>  out T
- * - ? super MyList    <==>  in T
- */
 fun <T> copyList(source: MyList<T>, destination: MyList<T>) {
+    val destIterator = destination.iterator()
+    while (destIterator.hasNext()) destIterator.next()
+    for (element in source) {
+        destIterator.add(element)
+    }
+}
+
+fun <U, T: U> copyListAnotherWay(source: MyList<T>, destination: MyList<U>) {
     val destIterator = destination.iterator()
     while (destIterator.hasNext()) destIterator.next()
     for (element in source) {
