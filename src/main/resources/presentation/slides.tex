@@ -85,10 +85,10 @@
 
 \begin{frame}[fragile]{Generics}
   \begin{wideitemize}
-    \item Allows a class or function to operate on objects of various types
-    \item Provides compile-time type safety
-    \item Not much different from generics in Java
-    \item Kotlin compiler can usually infer the parameterized type from the values provided
+    \item Allows a class or function to operate on objects of various types.
+    \item Provides compile-time type safety.
+    \item Not much different from generics in Java.
+    \item Kotlin compiler can usually infer the parameterized type from the values provided.
     \begin{bgverbatim}{\small}
 val list1 = listOf(1, 2, 3)
 val list2 = listOf("1", "2", "3")
@@ -191,7 +191,7 @@ println(anys is List<&fvtextcolor[red][*]>) // true
     \item Kotlin has a way of retaining type information at runtime, called \textbf{reification}
     \item Reification only works:
     \begin{itemize}
-      \item In an \textbf{inlined function}
+      \item On an \textbf{inlined function}
       \item If the generic type is preceded by the \cverb|reified| keyword
     \end{itemize}
     \begin{bgverbatim}{\footnotesize}
@@ -350,6 +350,7 @@ fun <T> Pair<T, T>.toList(): List<T>
   \end{center}
 
   \note[item]{Use site variance is closer to how Java handle variance, whereas declaration site variance is more of a Kotlin thing.}
+  \note[item]{Thank the audience for not falling asleep (if they haven't).}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -434,15 +435,13 @@ val naturalNumbers: Sequence<Int>
 \stepcounter{subsection}
 
 \begin{frame}[fragile]{Resources}
-  \begin{wideitemize}
-    \item Assignment: Udemy's Kotlin challenges (Round Five)
-    \item Additional problems are in the git repository of this session, under the \verb|com.rbc.rbcone.studygroup.kotlin| package.
-    \begin{itemize}
-      \item Six problems total.
-      \item Solutions are in the \verb|solutions| branch.
-    \end{itemize}
-    \item Slides and code examples are in the git repository.
-  \end{wideitemize}
+  \begin{itemize}
+    \item Assignment: Udemy's Kotlin challenges (Round Five).
+    \item Six additional problems in the git repository (Solutions in the \verb|solutions| branch).
+    \item Kotlin docs: https://kotlinlang.org/docs/reference/generics.html
+    \item Illustrated guide on variance: https://typealias.com/guides/illustrated-guide-covariance-contravariance
+    \item Code examples: https://github.com/gbaldeck/learning-kotlin/blob/master/src/main/kotlin/org/learning/Generics.kt
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Conclusion}

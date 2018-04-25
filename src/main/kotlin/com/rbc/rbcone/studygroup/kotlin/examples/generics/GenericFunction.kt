@@ -2,24 +2,20 @@ package com.rbc.rbcone.studygroup.kotlin.examples.generics
 
 fun main(args: Array<String>) {
 
-    val int = 3
-    val num = 4.2
-    val str = "Hello"
-
-    println(multiply(int))
-    println(multiply(num))
-    println(multiply(multiply(str)))
+    println(multiply(3))
+    println(multiply(4.2))
+    println(multiply(multiply("Hello")))
 
     /*
-    listOf(1, 2, 3, 4, 5).printCollection()
-    listOf("Abe", "Beth", "Ether").printCollection()
+    listOf(1, 2, 3, 4, 5).print()
+    listOf("Abe", "Beth", "Ether").print()
     */
 }
 
 fun <T> multiply(item: T): Pair<T, T> = item to item
 
 /*
-fun <T> List<T>.printCollection() {
+fun <T> Iterable<T>.print() {
     for (item in this) {
         println(item)
     }

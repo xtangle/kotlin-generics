@@ -12,8 +12,9 @@ fun main(args: Array<String>) {
     */
 
     /*
-    val fibonacci = generateSequence(0 to 1) { it.second to it.first + it.second }.map { it.first }
-    println(fibonacci.take(10).toList())
+    val zero = sequenceOf(0)
+    val binaryCoefficients = generateSequence(sequenceOf(1)) { (zero + it + zero).zipWithNext { a, b -> a + b } }
+    binaryCoefficients.take(10).forEach { println(it.joinToString(" ")) }
     */
 
     /*
