@@ -11,13 +11,15 @@ fun main(args: Array<String>) {
     copyList(source, dest1)
     dest1.printContents()
 
-    // copyList(source, dest2)
-    // dest2.printContents()
+    /*
+    copyList(source, dest2)
+    dest2.printContents()
 
-    // copyListJavaWay(source, dest2)
-    // dest2.printContents()
+    copyListJavaWay(source, dest2)
+    dest2.printContents()
+    */
 
-    println(isEqual(source, dest1))
+    // println(isEqual(source, dest2))
 }
 
 class MyList<T>(vararg initialContents: T): MutableIterable<T> {
@@ -38,7 +40,7 @@ fun <T> copyList(source: MyList<T>, destination: MyList<T>) {
     }
 }
 
-fun <U, T: U> copyListAnotherWay(source: MyList<T>, destination: MyList<U>) {
+fun <U, T: U> copyListJavaWay(source: MyList<T>, destination: MyList<U>) {
     val destIterator = destination.iterator()
     while (destIterator.hasNext()) destIterator.next()
     for (element in source) {

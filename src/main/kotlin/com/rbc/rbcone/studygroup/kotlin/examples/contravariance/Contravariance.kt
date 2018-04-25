@@ -9,12 +9,14 @@ fun main(args: Array<String>) {
     val list3: MyList<BigDecimal> = MyList(BigDecimal("1.5"), BigDecimal("-4.7"))
     val list4: MyList<Number> = MyList(1, 2.3, -5.1f)
 
-    // list1.printContents(numberFormatter)
+    /*
+    list1.printContents(numberFormatter)
     list2.printContents(stringFormatter)
-    // list3.printContents(numberFormatter)
+    list3.printContents(numberFormatter)
     list4.printContents(numberFormatter)
+    */
 
-    // list1.printContents{ numberFormatter.format(it) } // Works because lambda is of type Function1
+    // list1.printContents{ numberFormatter.format(it) }
 }
 
 class MyList<T>(vararg initialContents: T) {

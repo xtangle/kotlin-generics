@@ -13,8 +13,8 @@ fun main(args: Array<String>) {
     println(list1.largest())
     println(list2.largest())
     println(list3.largest())
-    */
     println(list4.largest())
+    */
 }
 
 class MyList<T>(vararg initialContents: T): Iterable<T> {
@@ -22,19 +22,40 @@ class MyList<T>(vararg initialContents: T): Iterable<T> {
 
     override fun iterator(): Iterator<T> = contents.iterator()
 
-    /*
     fun add(element: T) {
         this.contents.add(element)
     }
-    */
 
     fun printContents() {
         println("The contents in this list are: ${contents.joinToString()}")
     }
 }
 
+fun MyList<Number>.largest(): Number? = TODO("not implemented")
 
-fun MyList<Number>.largest(): Number? = iterator().asSequence().maxBy { it.toDouble() }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fun MyList<Number>.largest(): Number? = iterator().asSequence().maxBy { it.toDouble() }
 
 
 /**

@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
     list4.printContents()
 }
 
-class MyList<T>(vararg initialContents: T) /*where T: Number, T: Comparable<T>*/ {
+class MyList<T>(vararg initialContents: T) {
     private val contents = mutableListOf(*initialContents)
 
     fun printContents() {

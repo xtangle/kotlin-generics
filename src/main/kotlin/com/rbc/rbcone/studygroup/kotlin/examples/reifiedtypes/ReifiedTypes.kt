@@ -41,3 +41,9 @@ inline fun <reified T> MyList<T>.printType() {
     println("This list contains elements of type: ${T::class}")
 }
 */
+
+/*
+fun <T> printTypeWrapper(myList: MyList<T>) {
+    myList.printType()
+}
+*/
