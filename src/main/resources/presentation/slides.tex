@@ -279,29 +279,6 @@ inline fun <reified T> List<T>.printType() {
   \end{wideitemize}
 \end{frame}
 
-\begin{frame}{Contravariance}
-  \begin{wideitemize}
-    \item A subtype must \textbf{accept at least} the same range of types as its supertype declares.
-    \item This relationship is called \textbf{contravariance}
-  \end{wideitemize}
-  \begin{center}
-    \includegraphics[height=0.5\textheight,keepaspectratio]{images/contravariant-argument-types}
-  \end{center}
-\end{frame}
-
-\begin{frame}[fragile]{Contravariance}
-  \begin{wideitemize}
-    \item We specify a type parameter of a class or interface to be \textbf{contravariant} by prepending the \cverb|in| keyword.
-    \item A contravariant type can only be used as function argument types; it can never be used as a function return type. (why?)
-    \item A contravariant type is said to be in the \textbf{in} position.
-    \begin{bgverbatim}{\small}
-interface Comparable<&fvtextcolor[red][in] T> {
-    operator fun compareTo(other: T): Int
-}
-    \end{bgverbatim}
-  \end{wideitemize}
-\end{frame}
-
 \begin{frame}{Covariance}
   \begin{wideitemize}
     \item A subtype must \textbf{return at most} the same range of types as its supertype declares.
@@ -322,6 +299,29 @@ data class Pair<&fvtextcolor[red][out] A, &fvtextcolor[red][out] B>(
     val first: A, val second: B)
 fun <T> Pair<T, T>.toList(): List<T> 
     = listOf(first, second)
+    \end{bgverbatim}
+  \end{wideitemize}
+\end{frame}
+
+\begin{frame}{Contravariance}
+  \begin{wideitemize}
+    \item A subtype must \textbf{accept at least} the same range of types as its supertype declares.
+    \item This relationship is called \textbf{contravariance}
+  \end{wideitemize}
+  \begin{center}
+    \includegraphics[height=0.5\textheight,keepaspectratio]{images/contravariant-argument-types}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Contravariance}
+  \begin{wideitemize}
+    \item We specify a type parameter of a class or interface to be \textbf{contravariant} by prepending the \cverb|in| keyword.
+    \item A contravariant type can only be used as function argument types; it can never be used as a function return type. (why?)
+    \item A contravariant type is said to be in the \textbf{in} position.
+    \begin{bgverbatim}{\small}
+interface Comparable<&fvtextcolor[red][in] T> {
+    operator fun compareTo(other: T): Int
+}
     \end{bgverbatim}
   \end{wideitemize}
 \end{frame}
